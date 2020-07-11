@@ -12,9 +12,10 @@ public class DeleteRecordServlet extends HttpServlet {
     private AddressBook addressBook;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         addressBook = AddressBook.getInstance();
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         addressBook.delete(request.getParameter("firstName"), request.getParameter("lastName"));
         response.sendRedirect("/records/list");

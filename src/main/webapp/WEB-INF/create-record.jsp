@@ -44,37 +44,3 @@
 </div>
 </body>
 </html>
-<%--<table>--%>
-<%--    <tr>--%>
-<%--        <td>--%>
-<%--            <label for="firstName">First Name:</label>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <input type="text" id="firstName" name="firstName">--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <td>--%>
-<%--            <label for="lastName">Last Name:</label>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <input type="text" id="lastName" name="lastName">--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <td>--%>
-<%--            <label for="address">Address:</label>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <textarea type="text" id="address" name="address"></textarea>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--    <tr>--%>
-<%--        <td>--%>
-<%--            <button type="submit">Create</button>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <button type="reset">Clear</button>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--</table>--%>

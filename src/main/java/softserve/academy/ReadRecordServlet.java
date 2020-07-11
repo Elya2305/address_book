@@ -12,13 +12,13 @@ public class ReadRecordServlet extends HttpServlet {
     private AddressBook addressBook;
 
     @Override
-    public void init(){
+    public void init() {
         addressBook = AddressBook.getInstance();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String address = addressBook.read(request.getParameter("firstName"), request.getParameter("lastName"));
-        if(address == null){
+        if (address == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
         request.setAttribute("address", address);

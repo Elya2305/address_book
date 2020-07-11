@@ -13,14 +13,14 @@ public class CreateRecordServlet extends HttpServlet {
     private boolean showWarning;
 
     @Override
-    public void init(){
+    public void init() {
         addressBook = AddressBook.getInstance();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        showWarning = !addressBook.create(request.getParameter("firstName"),request.getParameter("lastName"),request.getParameter("address"));
+        showWarning = !addressBook.create(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("address"));
         request.setAttribute("showWarning", showWarning); //?
-        if(showWarning){
+        if (showWarning) {
             request.getRequestDispatcher("/WEB-INF/create-record.jsp").forward(request, response);
         }
         response.sendRedirect("/records/list");

@@ -1,6 +1,5 @@
 package softserve.academy;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,16 +12,12 @@ public class ListRecordServlet extends HttpServlet {
     private AddressBook addressBook;
 
     @Override
-    public void init(){
+    public void init() {
         addressBook = AddressBook.getInstance();
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("sort")!=null){
+        if (request.getParameter("sort") != null) {
             addressBook.sortedBy(SortOrder.valueOf(request.getParameter("sort").toUpperCase()));
         }
         request.setAttribute("addressBook", addressBook);
