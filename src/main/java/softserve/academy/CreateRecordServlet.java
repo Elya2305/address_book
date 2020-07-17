@@ -19,7 +19,7 @@ public class CreateRecordServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         showWarning = !addressBook.create(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("address"));
-        request.setAttribute("showWarning", showWarning); //?
+        request.setAttribute("showWarning", showWarning);
         if (showWarning) {
             request.getRequestDispatcher("/WEB-INF/create-record.jsp").forward(request, response);
         }

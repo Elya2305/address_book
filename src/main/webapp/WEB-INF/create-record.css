@@ -15,7 +15,7 @@ h1 {
     text-transform: uppercase;
 }
 
-.menu:hover {
+.menu:hover,.warning:hover {
     color: white;
     background: red;
 }
@@ -44,7 +44,17 @@ form {
 
 .myLink:hover {
     background: rgba(29, 218, 22, 0.2);
-    /* padding: 5px 10px; */
+}
+
+.warning {
+    display: inline-block;
+    width: 45px;
+    background-color: #f2f2f2;
+}
+
+.warning:hover {
+    color: white;
+    background: red;
 }
 
 .back.button {

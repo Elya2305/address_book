@@ -10,6 +10,16 @@
 </head>
 <body>
 <%@include file="manager.html" %>
+<%
+    if((boolean) request.getAttribute("showWarning")){
+%>
+<p>Are you sure you want to delete a record???</p>
+<a href="/records/delete?sure=yes" class="warning">Yes</a>
+<a href="/records/delete?sure=no" class="warning">No</a>
+
+<%
+}
+%>
 <br><br>
 <%
     AddressBook addressBook = (AddressBook) request.getAttribute("addressBook");
@@ -46,14 +56,13 @@ Sort by: <a href="/records/list?sort=asc" class="myLink">asc</a> | <a href="/rec
             <a href="/records/read?firstName=<%=address[0]%>&lastName=<%=address[1]%>" class="myLink">Read</a>
         </td>
         <td class="operations">
-            <a href="/records/update?firstName=<%=address[0]%>&lastName=<%=address[1]%>" class="myLink">Reset</a>
+            <a href="/records/update?firstName=<%=address[0]%>&lastName=<%=address[1]%>" class="myLink">Edit</a>
         </td>
         <td class="operations">
             <a href="/records/delete?firstName=<%=address[0]%>&lastName=<%=address[1]%>" class="myLink">Delete</a>
         </td>
     </tr>
     <%}%>
-
 </table>
 </body>
 </html>

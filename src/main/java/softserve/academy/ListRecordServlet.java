@@ -17,10 +17,15 @@ public class ListRecordServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean showWarning = false;
         if (request.getParameter("sort") != null) {
             addressBook.sortedBy(SortOrder.valueOf(request.getParameter("sort").toUpperCase()));
         }
+        if(request.getParameter("delete") != null){
+            showWarning = true;
+        }
         request.setAttribute("addressBook", addressBook);
+        request.setAttribute("showWarning", showWarning);
         request.getRequestDispatcher("/WEB-INF/list-record.jsp").forward(request, response);
     }
 }
