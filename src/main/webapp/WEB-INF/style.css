@@ -15,7 +15,7 @@ h1 {
     text-transform: uppercase;
 }
 
-.menu:hover,.warning:hover {
+.menu:hover, .warning:hover {
     color: white;
     background: red;
 }

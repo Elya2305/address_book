@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
-    <%@include file="create-record.css" %>
+    <%@include file="style.css" %>
 </style>
 <html>
 <head>

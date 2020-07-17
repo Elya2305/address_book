@@ -3,7 +3,7 @@
 
 <%@include file="manager.html" %>
 <style>
-    <%@include file="create-record.css" %>
+    <%@include file="style.css" %>
 </style>
 <br><br>
 <% if (request.getAttribute("address") == null) {

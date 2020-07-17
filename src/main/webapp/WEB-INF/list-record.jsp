@@ -2,7 +2,7 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
-    <%@include file="create-record.css" %>
+    <%@include file="style.css" %>
 </style>
 <html>
 <head>
@@ -11,14 +11,14 @@
 <body>
 <%@include file="manager.html" %>
 <%
-    if((boolean) request.getAttribute("showWarning")){
+    if ((boolean) request.getAttribute("showWarning")) {
 %>
 <p>Are you sure you want to delete a record???</p>
 <a href="/records/delete?sure=yes" class="warning">Yes</a>
 <a href="/records/delete?sure=no" class="warning">No</a>
 
 <%
-}
+    }
 %>
 <br><br>
 <%

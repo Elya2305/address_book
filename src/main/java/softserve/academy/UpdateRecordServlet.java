@@ -12,18 +12,25 @@ public class UpdateRecordServlet extends HttpServlet {
     private AddressBook addressBook;
     private String firstName;
     private String lastName;
+    private boolean showWarning;
 
     @Override
     public void init() {
         addressBook = AddressBook.getInstance();
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        addressBook.update(firstName, lastName, request.getParameter("address"));
-        response.sendRedirect("/records/list");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        showWarning = request.getParameter("address").isBlank();
+        if (showWarning) {
+            response.sendRedirect("/records/update?firstName=" + firstName + "&lastName=" + lastName);
+        } else {
+            addressBook.update(firstName, lastName, request.getParameter("address"));
+            response.sendRedirect("/records/list");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("showWarning", showWarning);
         firstName = request.getParameter("firstName");
         lastName = request.getParameter("lastName");
         String address = addressBook.read(firstName, lastName);

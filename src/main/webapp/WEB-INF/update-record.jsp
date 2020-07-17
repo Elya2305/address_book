@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
-    <%@include file="create-record.css" %>
+    <%@include file="style.css" %>
 </style>
 <html>
-
 <%@include file="manager.html" %>
 <br><br>
-<%if (request.getAttribute("address") == null) {%>
+<%if (request.getAttribute("address") == null && !((boolean) request.getAttribute("showWarning"))) {%>
 <head>
     <title>Record not found</title>
 </head>
@@ -14,12 +13,16 @@
     found! </h1>
 
 <%} else {%>
-
+<%
+    if ((boolean) request.getAttribute("showWarning")) {
+%>
+<p class="error">Address can't be blank!</p>
+<%}%>
 <head>
     <title>Update a record</title>
 </head>
 <body>
-<form action="/records/update" method="post" style="{}">
+<form action="/records/update" method="post">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" name="firstName" disabled value="<%=request.getParameter("firstName")%>">
 

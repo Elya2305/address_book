@@ -17,12 +17,9 @@ public class ListRecordServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean showWarning = false;
+        boolean showWarning = request.getParameter("delete") != null;
         if (request.getParameter("sort") != null) {
             addressBook.sortedBy(SortOrder.valueOf(request.getParameter("sort").toUpperCase()));
-        }
-        if(request.getParameter("delete") != null){
-            showWarning = true;
         }
         request.setAttribute("addressBook", addressBook);
         request.setAttribute("showWarning", showWarning);
